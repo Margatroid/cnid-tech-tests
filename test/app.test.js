@@ -9,6 +9,7 @@ describe("routing", () => {
       .get("/")
       .then(res => {
         expect(res.statusCode).toBe(200);
+        expect(res.text).toEqual(expect.stringContaining("<h1>Hello</h1>"));
       });
   });
 });
