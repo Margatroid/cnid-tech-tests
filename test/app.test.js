@@ -1,7 +1,14 @@
-// If you prefer another flavour of testing library, please feel free to use it.
+"use strict";
 
-describe('app', () => {
-  it('should run the tests', () => {
-    expect(1).toBe(1);
+const request = require("supertest");
+const app = require("../src/app");
+
+describe("routing", () => {
+  it("will render root", () => {
+    return request(app)
+      .get("/")
+      .then(res => {
+        expect(res.statusCode).toBe(200);
+      });
   });
-})
+});
