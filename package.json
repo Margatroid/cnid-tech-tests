@@ -1,7 +1,7 @@
 {
   "name": "cnid-interview",
-  "version": "1.0.0",
-  "description": "CNI Digital Interview",
+  "version": "2.0.0",
+  "description": "CNI Digital Interview (Option 1)",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conde-nast-international/cnid-interview.git"
+    "url": "git+https://github.com/Margatroid/cnid-tech-tests.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/conde-nast-international/cnid-interview/issues"
+    "url": "https://github.com/Margatroid/cnid-tech-tests/issues"
   },
-  "homepage": "https://github.com/conde-nast-international/cnid-interview#readme"
+  "homepage": "https://github.com/Margatroid/cnid-tech-tests#readme"
 }
