@@ -5,6 +5,7 @@ const app = express();
 const articleModel = require("./models/article");
 
 app.set("view engine", "ejs");
+app.set("views", "./src/views");
 
 // Index page.
 app.get("/", async (req, res, next) => {
