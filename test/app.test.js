@@ -4,24 +4,26 @@ const request = require("supertest");
 const app = require("../src/app");
 
 describe("routing", () => {
-  it("will render root", () => {
-    return request(app)
-      .get("/")
-      .then(res => {
-        expect(res.statusCode).toBe(200);
-        expect(res.text).toEqual(expect.stringContaining("<h1>Hello</h1>"));
-      });
+  it("will render root", async () => {
+    const res = await request(app).get("/");
+    expect(res.statusCode).toBe(200);
+
+    // Assert two random titles from the dataset.
+    expect(res.text).toEqual(
+      expect.stringContaining("An unknown printer took a")
+    );
+    expect(res.text).toEqual(
+      expect.stringContaining("It was popularised in the 1960s")
+    );
   });
 
-  it("will render an article title", () => {
-    return request(app)
-      .get("/articles/1")
-      .then(res => {
-        expect(res.statusCode).toBe(200);
-        expect(res.text).toEqual(
-          expect.stringContaining("Lorem Ipsum has been the")
-        );
-      });
+  it("will render an article title", async () => {
+    const res = await request(app).get("/articles/1");
+    expect(res.statusCode).toBe(200);
+
+    expect(res.text).toEqual(
+      expect.stringContaining("Lorem Ipsum has been the")
+    );
   });
 
   it("will 404 if article does not exist", async () => {

@@ -6,10 +6,17 @@ const articleModel = require("./models/article");
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  res.render("index");
+// Index page.
+app.get("/", async (req, res, next) => {
+  try {
+    const articles = await articleModel.index();
+    res.render("index", { articles });
+  } catch (error) {
+    next(error);
+  }
 });
 
+// Article page.
 app.get("/articles/:articleId", async (req, res) => {
   try {
     const id = parseInt(req.params.articleId, 10);
@@ -20,6 +27,7 @@ app.get("/articles/:articleId", async (req, res) => {
   }
 });
 
+// 404 handler.
 app.use((req, res, next) => {
   res.status(404).send("Error 404. Page not found.");
 });
