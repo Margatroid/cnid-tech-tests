@@ -5,6 +5,9 @@ const articleModel = require("./article");
 it("will get all article titles", async () => {
   const articles = await articleModel.index();
   expect(articles.length).toEqual(10);
+  expect(articles[0].title).toEqual(
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+  );
 });
 
 it("will get data for a particular article", async () => {

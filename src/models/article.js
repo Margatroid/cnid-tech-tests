@@ -13,7 +13,7 @@ const readData = async () => {
 exports.index = async () => {
   const articles = await readData();
   return articles.map(article => {
-    return { id: article.id, title: article.id, cover: article.cover };
+    return { id: article.id, title: article.title, cover: article.cover };
   });
 };
 
