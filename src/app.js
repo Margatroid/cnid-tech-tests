@@ -6,8 +6,9 @@ const articleModel = require("./models/article");
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
+app.use(express.static("./src/public"));
 
-// Index page.
+// Index page handler.
 app.get("/", async (req, res, next) => {
   try {
     const articles = await articleModel.index();
@@ -17,7 +18,7 @@ app.get("/", async (req, res, next) => {
   }
 });
 
-// Article page.
+// Article page handler.
 app.get("/articles/:articleId", async (req, res) => {
   try {
     const id = parseInt(req.params.articleId, 10);

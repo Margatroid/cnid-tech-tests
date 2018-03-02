@@ -1,5 +1,13 @@
-<div>
-  <% articles.forEach(function(article) { %>
-    <h1><%= article.title %></h1>
-  <% }); %>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% articles.forEach(function(article) { %>
+        <h1><%= article.title %></h1>
+      <% }); %>
+    </div>
+  </body>
+</html>
