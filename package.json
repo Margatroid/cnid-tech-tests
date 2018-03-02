@@ -19,6 +19,7 @@
   "scripts": {
     "start": "node src/server.js",
     "lint": "eslint --fix src/ test/",
+    "debug": "npm run lint && node --inspect-brk node_modules/.bin/jest --runInBand",
     "test": "npm run lint && jest"
   },
   "repository": {
