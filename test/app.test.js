@@ -23,4 +23,10 @@ describe("routing", () => {
         );
       });
   });
+
+  it("will 404 if page is not found", async () => {
+    const res = await request(app).get("/where-am-i");
+    expect(res.statusCode).toBe(404);
+    expect(res.text).toEqual("Error 404. Page not found.");
+  });
 });
