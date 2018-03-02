@@ -15,13 +15,18 @@ describe("routing", () => {
 
   it("will render an article title", () => {
     return request(app)
-      .get("/articles/4172")
+      .get("/articles/1")
       .then(res => {
         expect(res.statusCode).toBe(200);
         expect(res.text).toEqual(
-          expect.stringContaining("<h1>Article 4172</h1>")
+          expect.stringContaining("Lorem Ipsum has been the")
         );
       });
+  });
+
+  it("will 404 if article does not exist", async () => {
+    const res = await request(app).get("/articles/999");
+    expect(res.statusCode).toBe(404);
   });
 
   it("will 404 if page is not found", async () => {
