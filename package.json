@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "lint": "eslint --fix src/ test/",
+    "lint": "eslint --fix src/ test/ && prettier --write src/public/styling.css",
     "debug": "npm run lint && node --inspect-brk node_modules/.bin/jest --runInBand",
     "test": "npm run lint && jest"
   },
