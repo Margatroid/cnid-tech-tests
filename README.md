@@ -20,7 +20,7 @@ In both instances the app will run on localhost:3000.
 
 ## Tests
 
-If you have the dependencies installed locally you can run the tests with `npm test`.
+If you have the dependencies installed locally you can run the tests with `npm test`. You must have Jest installed globally.
 
 ## My local environment.
 
