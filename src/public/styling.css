@@ -30,7 +30,9 @@ h1 {
 .article-tiles__article-tile {
   flex: 0 0 100%;
   border: 1px solid #96d899;
-  height: 20rem;
+  min-height: 40rem;
+  background-position: center;
+  background-size: cover;
 }
 
 @media (min-width: 30rem) {
