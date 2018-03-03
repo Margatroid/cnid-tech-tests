@@ -1,5 +1,7 @@
 <div class="article-tiles__article-tile" style="background-image: url('<%- article.cover %>')">
-  <div class="article-tile__banner">
-    <h1><%= article.title %></h1>
-  </div>
+  <a class="article-tile__tile-link" href="/articles/<%- article.id %>">
+    <div class="tile-link__banner">
+      <h1><%= article.title %></h1>
+    </div>
+  </a>
 </div>
