@@ -2,6 +2,7 @@
 
 const request = require("supertest");
 const app = require("../src/app");
+const articleModel = require("../src/models/article");
 
 describe("routing", () => {
   it("will render root", async () => {
@@ -45,6 +46,17 @@ describe("css path", () => {
       expect.stringContaining(
         '<link rel="stylesheet" type="text/css" href="/styling.css">'
       )
+    );
+  });
+});
+
+describe("article page", () => {
+  it("loads article image", async () => {
+    const res = await request(app).get("/articles/2");
+    const articleData = await articleModel.get(2);
+
+    expect(res.text).toEqual(
+      expect.stringContaining(`src="${articleData.cover}`)
     );
   });
 });

@@ -5,9 +5,16 @@
   </head>
   <body>
     <% include ./partials/header.ejs %>
-
     <div class="container">
-      <h1><%= title %></h1>
+      <div class="article-layout">
+        <div class="article-layout__header">
+          <h1><%= title %>
+        </div>
+        <img class="article-layout__img" alt="Article cover image" src="<%- cover %>" />
+        <div class="article-layout__content">
+          Lorem ipsum
+        </div>
+      </div>
     </div>
   </body>
 </html>
