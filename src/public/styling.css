@@ -10,14 +10,37 @@ body {
 .header {
   background-color: #969ad8;
   color: #fff;
+  padding: 2rem;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 800px;
-  padding: 2rem;
+  max-width: 1366px;
 }
 
 h1 {
   font-size: 1.5rem;
+}
+
+.article-tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-tiles__article-tile {
+  flex: 0 0 100%;
+  border: 1px solid #96d899;
+  height: 20rem;
+}
+
+@media (min-width: 30rem) {
+  .article-tiles__article-tile {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 60rem) {
+  .article-tiles__article-tile {
+    flex: 0 0 33%;
+  }
 }

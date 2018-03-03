@@ -6,9 +6,11 @@
   <body>
     <% include ./partials/header.ejs %>
     <div class="container">
-      <% articles.forEach(function(article) { %>
-        <h1><%= article.title %></h1>
-      <% }); %>
+      <div class="article-tiles">
+        <% articles.forEach(function(article) { %>
+          <%- include('./partials/article-tile', { article: article }) %>
+        <% }); %>
+      </div>
     </div>
   </body>
 </html>
