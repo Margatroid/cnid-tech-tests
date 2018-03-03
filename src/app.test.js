@@ -82,4 +82,12 @@ describe("article page", () => {
       )
     );
   });
+
+  it("renders every page without errors", async () => {
+    const articles = await articleModel.index();
+    articles.forEach(async article => {
+      const res = await request(app).get(`/articles/${article.id}`);
+      expect(res.statusCode).toBe(200);
+    });
+  });
 });
