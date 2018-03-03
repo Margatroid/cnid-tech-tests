@@ -7,7 +7,7 @@ Hi. I learned Express to build a simple app that will render articles over HTML 
 Clone the repo and use Docker to quickly get the development server up and running.
 ```
 docker build -t option1 .
-docker run -d option 1
+docker run -d -p 3000:3000 option1
 ```
 
 Alternatively you can clone the repo and install the dependencies locally.
