@@ -37,3 +37,14 @@ describe("routing", () => {
     expect(res.text).toEqual("Error 404. Page not found.");
   });
 });
+
+describe("css path", () => {
+  it("will load the correct css path", async () => {
+    const res = await request(app).get("/articles/1");
+    expect(res.text).toEqual(
+      expect.stringContaining(
+        '<link rel="stylesheet" type="text/css" href="/styling.css">'
+      )
+    );
+  });
+});
