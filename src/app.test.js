@@ -59,4 +59,27 @@ describe("article page", () => {
       expect.stringContaining(`src="${articleData.cover}`)
     );
   });
+
+  it("will render a h2 correctly", async () => {
+    const res = await request(app).get("/articles/9");
+    expect(res.text).toEqual(
+      expect.stringContaining("<h2>I hacked the Pentagon")
+    );
+  });
+
+  it("will render a plaintext correctly", async () => {
+    const res = await request(app).get("/articles/3");
+    expect(res.text).toEqual(
+      expect.stringContaining("<p>Landjaeger pork pastrami")
+    );
+  });
+
+  it("will render a pullquote correctly", async () => {
+    const res = await request(app).get("/articles/3");
+    expect(res.text).toEqual(
+      expect.stringContaining(
+        "<blockquote>If one examines the postdeconstructive paradigm"
+      )
+    );
+  });
 });

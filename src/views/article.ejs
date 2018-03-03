@@ -12,7 +12,9 @@
         </div>
         <img class="article-layout__img" alt="Article cover image" src="<%- cover %>" />
         <div class="article-layout__content">
-          Lorem ipsum
+          <% body.forEach((content) => { %>
+            <%- include(`./partials/content/${content.type.replace('_', '-')}`, { body: content.body }) %>
+          <% }); %>
         </div>
       </div>
     </div>
