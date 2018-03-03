@@ -78,7 +78,7 @@ describe("article page", () => {
     const res = await request(app).get("/articles/3");
     expect(res.text).toEqual(
       expect.stringContaining(
-        "<blockquote>If one examines the postdeconstructive paradigm"
+        '<blockquote class="content__pullquote">If one examines the postdeconstructive paradigm'
       )
     );
   });
